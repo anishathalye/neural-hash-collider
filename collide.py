@@ -71,7 +71,7 @@ def main():
                     hash_to_hex(hash_output_v),
                     dist,
                     loss_v
-                ) + (" [ZERO DIST - Saved output]" if dist is 0))
+                ) + (" [ZERO DIST - Saved output]" if dist == 0 else ""))
 
 
 def get_options():
