@@ -55,10 +55,15 @@ def main():
                 x = x - options.learning_rate * g_v_norm
                 x = x.clip(-1, 1)
                 dist = np.sum((hash_output_v >= 0.5) != (h >= 0.5))
+                
+                if dist == 0:
+                    save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}_zero.png'.format(i, dist)))
+                
                 if dist < best or i % options.save_iterations == 0:
                     save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}.png'.format(i, dist)))
                 if dist < best:
                     best = dist
+                    
                 print('iteration: {}/{}, best: {}, hash: {}, distance: {}, loss: {:.3f}'.format(
                     i+1,
                     options.iterations,
@@ -66,7 +71,7 @@ def main():
                     hash_to_hex(hash_output_v),
                     dist,
                     loss_v
-                ))
+                ) + (" [ZERO DIST - Saved output]" if dist is 0))
 
 
 def get_options():
