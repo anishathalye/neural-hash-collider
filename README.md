@@ -13,12 +13,14 @@ $ python collide.py --image cat.jpg
 ...
 ```
 
-![Cat image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/cat-adv.png)
+![Cat image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/cat-adv.png) ![Dog image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/dog.png)
 
 We can confirm the hash collision using `nnhash.py` from
 [AsuharietYgvar/AppleNeuralHash2ONNX]:
 
 ```console
+$ python nnhash.py dog.png
+59a34eabe31910abfb06f308
 $ python nnhash.py adv.png
 59a34eabe31910abfb06f308
 ```
