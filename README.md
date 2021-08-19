@@ -9,8 +9,9 @@ we can find an adversarial image that has the same hash as the
 of the dog in [this post][hash collisions]:
 
 ```console
-$ python collide.py --image cat.jpg
+$ python collide.py --image cat.jpg --target 59a34eabe31910abfb06f308
 ...
+# took about 2.5 minutes to run on an i7-5930K
 ```
 
 ![Cat image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/cat-adv.png) ![Dog image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/dog.png)
