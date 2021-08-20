@@ -60,8 +60,7 @@ adversarial examples for neural networks: we perform gradient descent.
 - Get Apple's NeuralHash model following the instructions in
   [AsuharietYgvar/AppleNeuralHash2ONNX] and either put all the
   files in this directory or supply the `--model` / `--seed` arguments
-- Install Python dependencies: `pip install onnx coremltools onnx_tf tensorflow
-  numpy Pillow`
+- Install Python dependencies: `pip install -r requirements.txt`
 
 [AsuharietYgvar/AppleNeuralHash2ONNX]: https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX
 
