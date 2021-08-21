@@ -50,15 +50,16 @@ def main():
             best = float('inf')
 
             for i in range(options.iterations):
-                hash_output_v, loss_v, g_v = sess.run([hash_output, loss, g], feed_dict={image: x})
-                g_v_norm = g_v / np.linalg.norm(g_v)
-                x = x - options.learning_rate * g_v_norm
-                x = x.clip(-1, 1)
+                xq = quantize(x)
+                hash_output_v, loss_v, g_v = sess.run([hash_output, loss, g], feed_dict={image: xq})
                 dist = np.sum((hash_output_v >= 0.5) != (h >= 0.5))
                 if dist < best or i % options.save_iterations == 0:
                     save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}.png'.format(i, dist)))
                 if dist < best:
                     best = dist
+                g_v_norm = g_v / np.linalg.norm(g_v)
+                x = x - options.learning_rate * g_v_norm
+                x = x.clip(-1, 1)
                 print('iteration: {}/{}, best: {}, hash: {}, distance: {}, loss: {:.3f}'.format(
                     i+1,
                     options.iterations,
@@ -67,6 +68,13 @@ def main():
                     dist,
                     loss_v
                 ))
+
+
+def quantize(x):
+    x = (x + 1.0) * (255.0 / 2.0)
+    x = x.astype(np.uint8).astype(np.float32)
+    x = x / (255.0 / 2.0) - 1.0
+    return x
 
 
 def get_options():
