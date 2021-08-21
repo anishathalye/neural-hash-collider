@@ -54,7 +54,7 @@ def main():
                 hash_output_v, loss_v, g_v = sess.run([hash_output, loss, g], feed_dict={image: xq})
                 dist = np.sum((hash_output_v >= 0.5) != (h >= 0.5))
                 if dist < best or i % options.save_iterations == 0:
-                    save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}.png'.format(i, dist)))
+                    save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}.png'.format(i+1, dist)))
                 if dist < best:
                     best = dist
                 g_v_norm = g_v / np.linalg.norm(g_v)
