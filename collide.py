@@ -53,7 +53,7 @@ def main():
                 xq = quantize(x)
                 hash_output_v, loss_v, g_v = sess.run([hash_output, loss, g], feed_dict={image: xq})
                 dist = np.sum((hash_output_v >= 0.5) != (h >= 0.5))
-                if dist < best or i % options.save_iterations == 0:
+                if dist < best or (i+1) % options.save_iterations == 0:
                     save_image(x, os.path.join(options.save_directory, 'out_iter={:05d}_dist={:02d}.png'.format(i+1, dist)))
                 if dist < best:
                     best = dist
