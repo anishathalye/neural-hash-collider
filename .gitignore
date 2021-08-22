@@ -2,3 +2,4 @@ NeuralHashv3b-current.espresso.*
 model.onnx
 neuralhash_128x96_seed1.dat
 *.png
+*.jpg
