@@ -1,4 +1,4 @@
-# neural-hash-collider
+# NeuralHash Collider
 
 Find target [hash collisions] for Apple's [NeuralHash] perceptual hash function.
 
