@@ -12,7 +12,7 @@ of the dog in [this post][hash collisions]:
 python collide.py --image cat.jpg --target 59a34eabe31910abfb06f308
 ```
 
-![Cat image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/cat-adv.png) ![Dog image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/dog.png)
+![Cat image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/cat-adv.png) ![Dog image with NeuralHash 59a34eabe31910abfb06f308](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/dog.png)
 
 We can confirm the hash collision using `nnhash.py` from
 [AsuharietYgvar/AppleNeuralHash2ONNX]:
@@ -71,9 +71,9 @@ look more natural and less like glitch art.
 
 ## Examples
 
-Reproducing the [Lena](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/lena.png)/[Barbara](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/barbara.png) result from [this post](https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX/issues/1#issuecomment-903094036):
+Reproducing the [Lena](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/lena.png)/[Barbara](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/barbara.png) result from [this post](https://github.com/AsuharietYgvar/AppleNeuralHash2ONNX/issues/1#issuecomment-903094036):
 
-<img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/lena.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/lena-adv.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/lena-adv-blur-1.0.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/barbara.png"></img>
+<img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/lena.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/lena-adv.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/lena-adv-blur-1.0.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/barbara.png"></img>
 
 The first image above is the original Lena image. The second was produced with `--target a426dae78cc63799d01adc32` to collide with Barbara. The third was produced with the additional argument `--blur 1.0`. The fourth is the original Barbara image. Checking their hashes:
 
@@ -88,9 +88,9 @@ $ python nnhash.py barbara.png
 a426dae78cc63799d01adc32
 ```
 
-Reproducing the [Picard](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/picard.png)/[Sidious](https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/sidious.png) result from [this post](https://github.com/anishathalye/neural-hash-collider/issues/4):
+Reproducing the [Picard](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/picard.png)/[Sidious](https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/sidious.png) result from [this post](https://github.com/anishathalye/neural-hash-collider/issues/4):
 
-<img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/picard.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/picard-adv.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/picard-adv-blur-0.5.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/neural-hash-collider/assets/sidious.png"></img>
+<img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/picard.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/picard-adv.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/picard-adv-blur-0.5.png"></img> <img width="200" src="https://raw.githubusercontent.com/anishathalye/assets/master/neural-hash-collider/sidious.png"></img>
 
 The first image above is the original Picard image. The second was produced with `--target e34b3da852103c3c0828fbd1 --tv-weight 3e-4` to collide with Sidious. The third was produced with the additional argument `--blur 0.5`. The fourth is the original Sidious image. Checking their hashes:
 
