@@ -127,3 +127,16 @@ The code in this repository is intended to be a demonstration, and perhaps a
 starting point for other exploration. Tweaking the implementation (choice of
 loss function, choice of parameters, etc.) might produce much better results
 than this code currently achieves.
+
+## Citation
+
+If you use this implementation in your work, please cite the following:
+
+```bibtex
+@misc{athalye2021neuralhashcollider,
+  author = {Anish Athalye},
+  title = {NeuralHash Collider},
+  year = {2021},
+  howpublished = {\url{https://github.com/anishathalye/neural-hash-collider}},
+}
+```
