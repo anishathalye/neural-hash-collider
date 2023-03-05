@@ -1,4 +1,4 @@
-# Copyright (c) 2021 Anish Athalye. Released under the MIT license.
+# Copyright (c) Anish Athalye. Released under the MIT license.
 
 import numpy as np
 import onnx
