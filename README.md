@@ -130,8 +130,6 @@ than this code currently achieves.
 
 ## Citation
 
-If you use this implementation in your work, please cite the following:
-
 ```bibtex
 @misc{athalye2021neuralhashcollider,
   author = {Anish Athalye},
